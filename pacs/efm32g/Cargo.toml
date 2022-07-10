@@ -1,0 +1,41 @@
+[package]
+name = "efm32g-pac"
+description = "Peripheral access API for EFM32G MCU (generated using svd2rust)"
+homepage = "https://github.com/efm32-rs/efm32g-pacs"
+version = "0.1.1"
+authors = [ "Vladimir Petrigo <vladimir.petrigo@gmail.com>",]
+license = "BSD-3-Clause"
+keywords = [ "no-std", "arm", "cortex-m", "efm32",]
+categories = [ "embedded", "hardware-support", "no-std",]
+repository = "https://github.com/efm32-rs/efm32g-pacs"
+readme = "README.md"
+edition = "2021"
+
+[dependencies]
+cortex-m = "~0.7"
+vcell = "~0.1"
+
+[features]
+default = [ "rt",]
+rt = [ "cortex-m-rt/device",]
+efm32g200 = []
+efm32g210 = []
+efm32g222 = []
+efm32g230 = []
+efm32g232 = []
+efm32g280 = []
+efm32g290 = []
+efm32g800 = []
+efm32g840 = []
+efm32g842 = []
+efm32g880 = []
+efm32g890 = []
+
+[dependencies.cortex-m-rt]
+version = "~0.7"
+optional = true
+
+[package.metadata.docs.rs]
+features = [ "rt", "efm32g200", "efm32g890",]
+default-target = "thumbv7m-none-eabi"
+targets = []

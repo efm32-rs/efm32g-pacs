@@ -2,8 +2,7 @@
 
 [![PACs](https://github.com/efm32-rs/efm32g-pacs/actions/workflows/pacs.yml/badge.svg)](https://github.com/efm32-rs/efm32g-pacs/actions/workflows/pacs.yml)
 
-This repository contains Peripheral Access Crates (PACs) for Silabs' EFM32 series of Cortex-M microcontrollers.
-
+This repository contains Peripheral Access Crates (PACs) for Silabs' EFM32G series of Cortex-M microcontrollers.
 All these crates are automatically generated using [svd2rust](https://github.com/rust-embedded/svd2rust).
 
 Refer to the [CHANGELOG](CHANGELOG.md) to see what changed in the last releases.
@@ -14,18 +13,7 @@ Every EFM32G chip has its own PAC, listed below:
 
 | Crate           | Docs                                                                                 | crates.io                                                                                                 | Target               |
 |-----------------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------|
-| `efm32g200-pac` | [![docs.rs](https://docs.rs/efm32g200-pac/badge.svg)](https://docs.rs/efm32g200-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g200-pac.svg)](https://crates.io/crates/efm32g200-pac) | `thumbv7m-none-eabi` |
-| `efm32g210-pac` | [![docs.rs](https://docs.rs/efm32g210-pac/badge.svg)](https://docs.rs/efm32g210-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g210-pac.svg)](https://crates.io/crates/efm32g210-pac) | `thumbv7m-none-eabi` |
-| `efm32g222-pac` | [![docs.rs](https://docs.rs/efm32g222-pac/badge.svg)](https://docs.rs/efm32g222-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g222-pac.svg)](https://crates.io/crates/efm32g222-pac) | `thumbv7m-none-eabi` |
-| `efm32g230-pac` | [![docs.rs](https://docs.rs/efm32g230-pac/badge.svg)](https://docs.rs/efm32g230-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g230-pac.svg)](https://crates.io/crates/efm32g230-pac) | `thumbv7m-none-eabi` |
-| `efm32g232-pac` | [![docs.rs](https://docs.rs/efm32g232-pac/badge.svg)](https://docs.rs/efm32g232-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g232-pac.svg)](https://crates.io/crates/efm32g232-pac) | `thumbv7m-none-eabi` |
-| `efm32g280-pac` | [![docs.rs](https://docs.rs/efm32g280-pac/badge.svg)](https://docs.rs/efm32g280-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g280-pac.svg)](https://crates.io/crates/efm32g280-pac) | `thumbv7m-none-eabi` |
-| `efm32g290-pac` | [![docs.rs](https://docs.rs/efm32g290-pac/badge.svg)](https://docs.rs/efm32g290-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g290-pac.svg)](https://crates.io/crates/efm32g290-pac) | `thumbv7m-none-eabi` |
-| `efm32g800-pac` | [![docs.rs](https://docs.rs/efm32g800-pac/badge.svg)](https://docs.rs/efm32g800-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g800-pac.svg)](https://crates.io/crates/efm32g800-pac) | `thumbv7m-none-eabi` |
-| `efm32g840-pac` | [![docs.rs](https://docs.rs/efm32g840-pac/badge.svg)](https://docs.rs/efm32g840-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g840-pac.svg)](https://crates.io/crates/efm32g840-pac) | `thumbv7m-none-eabi` |
-| `efm32g842-pac` | [![docs.rs](https://docs.rs/efm32g842-pac/badge.svg)](https://docs.rs/efm32g842-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g842-pac.svg)](https://crates.io/crates/efm32g842-pac) | `thumbv7m-none-eabi` |
-| `efm32g880-pac` | [![docs.rs](https://docs.rs/efm32g880-pac/badge.svg)](https://docs.rs/efm32g880-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g880-pac.svg)](https://crates.io/crates/efm32g880-pac) | `thumbv7m-none-eabi` |
-| `efm32g890-pac` | [![docs.rs](https://docs.rs/efm32g890-pac/badge.svg)](https://docs.rs/efm32g890-pac) | [![crates.io](https://img.shields.io/crates/d/efm32g890-pac.svg)](https://crates.io/crates/efm32g890-pac) | `thumbv7m-none-eabi` |
+| `efm32g-pac`| [![docs.rs](https://docs.rs/efm32g-pac/badge.svg)](https://docs.rs/efm32g-pac)| [![crates.io](https://img.shields.io/crates/d/efm32g-pac)](https://crates.io/crates/efm32g-pac)| `thumbv7m-none-eabi` |
 
 ## Device Reference Manuals from Silabs
 
