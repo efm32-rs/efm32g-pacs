@@ -37,7 +37,7 @@ impl From<crate::W<AUXHFRCOCTRL_SPEC>> for W {
 #[doc = "Field `TUNING` reader - AUXHFRCO Tuning Value"]
 pub type TUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TUNING` writer - AUXHFRCO Tuning Value"]
-pub type TUNING_W<'a> = crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 8, 0>;
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AUXHFRCOCTRL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - AUXHFRCO Tuning Value"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - AUXHFRCO Tuning Value"]
     #[inline(always)]
-    pub fn tuning(&mut self) -> TUNING_W {
+    #[must_use]
+    pub fn tuning(&mut self) -> TUNING_W<0> {
         TUNING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for AUXHFRCOCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [auxhfrcoctrl::W](W) writer structure"]
 impl crate::Writable for AUXHFRCOCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets AUXHFRCOCTRL to value 0x80"]
 impl crate::Resettable for AUXHFRCOCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80
-    }
+    const RESET_VALUE: Self::Ux = 0x80;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<CALCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
+pub type UPSEL_R = crate::FieldReader<u8, UPSEL_A>;
 #[doc = "Calibration Up-counter Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UPSEL_A {
     #[doc = "0: Select HFXO as up-counter."]
@@ -55,8 +57,6 @@ impl From<UPSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UPSEL` reader - Calibration Up-counter Select"]
-pub type UPSEL_R = crate::FieldReader<u8, UPSEL_A>;
 impl UPSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -97,8 +97,8 @@ impl UPSEL_R {
     }
 }
 #[doc = "Field `UPSEL` writer - Calibration Up-counter Select"]
-pub type UPSEL_W<'a> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, UPSEL_A, 3, 0>;
-impl<'a> UPSEL_W<'a> {
+pub type UPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALCTRL_SPEC, u8, UPSEL_A, 3, O>;
+impl<'a, const O: u8> UPSEL_W<'a, O> {
     #[doc = "Select HFXO as up-counter."]
     #[inline(always)]
     pub fn hfxo(self) -> &'a mut W {
@@ -135,7 +135,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Calibration Up-counter Select"]
     #[inline(always)]
-    pub fn upsel(&mut self) -> UPSEL_W {
+    #[must_use]
+    pub fn upsel(&mut self) -> UPSEL_W<0> {
         UPSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -157,11 +158,10 @@ impl crate::Readable for CALCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [calctrl::W](W) writer structure"]
 impl crate::Writable for CALCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CALCTRL to value 0"]
 impl crate::Resettable for CALCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

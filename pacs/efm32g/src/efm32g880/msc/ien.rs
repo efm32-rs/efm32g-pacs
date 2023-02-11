@@ -37,11 +37,11 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `ERASE` reader - Erase Done Interrupt Enable"]
 pub type ERASE_R = crate::BitReader<bool>;
 #[doc = "Field `ERASE` writer - Erase Done Interrupt Enable"]
-pub type ERASE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `WRITE` reader - Write Done Interrupt Enable"]
 pub type WRITE_R = crate::BitReader<bool>;
 #[doc = "Field `WRITE` writer - Write Done Interrupt Enable"]
-pub type WRITE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Erase Done Interrupt Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Erase Done Interrupt Enable"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
+    #[must_use]
+    pub fn erase(&mut self) -> ERASE_W<0> {
         ERASE_W::new(self)
     }
     #[doc = "Bit 1 - Write Done Interrupt Enable"]
     #[inline(always)]
-    pub fn write(&mut self) -> WRITE_W {
+    #[must_use]
+    pub fn write(&mut self) -> WRITE_W<1> {
         WRITE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

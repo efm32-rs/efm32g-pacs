@@ -37,15 +37,15 @@ impl From<crate::W<RDTIMING_SPEC>> for W {
 #[doc = "Field `RDSETUP` reader - Read Setup Time"]
 pub type RDSETUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RDSETUP` writer - Read Setup Time"]
-pub type RDSETUP_W<'a> = crate::FieldWriter<'a, u32, RDTIMING_SPEC, u8, u8, 2, 0>;
+pub type RDSETUP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RDTIMING_SPEC, u8, u8, 2, O>;
 #[doc = "Field `RDSTRB` reader - Read Strobe Time"]
 pub type RDSTRB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RDSTRB` writer - Read Strobe Time"]
-pub type RDSTRB_W<'a> = crate::FieldWriter<'a, u32, RDTIMING_SPEC, u8, u8, 4, 8>;
+pub type RDSTRB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RDTIMING_SPEC, u8, u8, 4, O>;
 #[doc = "Field `RDHOLD` reader - Read Hold Time"]
 pub type RDHOLD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RDHOLD` writer - Read Hold Time"]
-pub type RDHOLD_W<'a> = crate::FieldWriter<'a, u32, RDTIMING_SPEC, u8, u8, 2, 16>;
+pub type RDHOLD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RDTIMING_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:1 - Read Setup Time"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Read Setup Time"]
     #[inline(always)]
-    pub fn rdsetup(&mut self) -> RDSETUP_W {
+    #[must_use]
+    pub fn rdsetup(&mut self) -> RDSETUP_W<0> {
         RDSETUP_W::new(self)
     }
     #[doc = "Bits 8:11 - Read Strobe Time"]
     #[inline(always)]
-    pub fn rdstrb(&mut self) -> RDSTRB_W {
+    #[must_use]
+    pub fn rdstrb(&mut self) -> RDSTRB_W<8> {
         RDSTRB_W::new(self)
     }
     #[doc = "Bits 16:17 - Read Hold Time"]
     #[inline(always)]
-    pub fn rdhold(&mut self) -> RDHOLD_W {
+    #[must_use]
+    pub fn rdhold(&mut self) -> RDHOLD_W<16> {
         RDHOLD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for RDTIMING_SPEC {
 #[doc = "`write(|w| ..)` method takes [rdtiming::W](W) writer structure"]
 impl crate::Writable for RDTIMING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RDTIMING to value 0"]
 impl crate::Resettable for RDTIMING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

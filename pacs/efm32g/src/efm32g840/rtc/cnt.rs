@@ -19,7 +19,7 @@ impl R {
     #[doc = "Bits 0:23 - Counter Value"]
     #[inline(always)]
     pub fn cnt(&self) -> CNT_R {
-        CNT_R::new((self.bits & 0x00ff_ffff) as u32)
+        CNT_R::new(self.bits & 0x00ff_ffff)
     }
 }
 #[doc = "Counter Value Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cnt](index.html) module"]
@@ -33,8 +33,5 @@ impl crate::Readable for CNT_SPEC {
 }
 #[doc = "`reset()` method sets CNT to value 0"]
 impl crate::Resettable for CNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

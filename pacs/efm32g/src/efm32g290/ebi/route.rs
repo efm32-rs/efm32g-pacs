@@ -37,31 +37,31 @@ impl From<crate::W<ROUTE_SPEC>> for W {
 #[doc = "Field `EBIPEN` reader - EBI Pin Enable"]
 pub type EBIPEN_R = crate::BitReader<bool>;
 #[doc = "Field `EBIPEN` writer - EBI Pin Enable"]
-pub type EBIPEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 0>;
+pub type EBIPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CS0PEN` reader - EBI_CS0 Pin Enable"]
 pub type CS0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CS0PEN` writer - EBI_CS0 Pin Enable"]
-pub type CS0PEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 1>;
+pub type CS0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CS1PEN` reader - EBI_CS1 Pin Enable"]
 pub type CS1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CS1PEN` writer - EBI_CS1 Pin Enable"]
-pub type CS1PEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 2>;
+pub type CS1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CS2PEN` reader - EBI_CS2 Pin Enable"]
 pub type CS2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CS2PEN` writer - EBI_CS2 Pin Enable"]
-pub type CS2PEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 3>;
+pub type CS2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `CS3PEN` reader - EBI_CS3 Pin Enable"]
 pub type CS3PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CS3PEN` writer - EBI_CS3 Pin Enable"]
-pub type CS3PEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 4>;
+pub type CS3PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `ALEPEN` reader - EBI_ALE Pin Enable"]
 pub type ALEPEN_R = crate::BitReader<bool>;
 #[doc = "Field `ALEPEN` writer - EBI_ALE Pin Enable"]
-pub type ALEPEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 5>;
+pub type ALEPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `ARDYPEN` reader - EBI_ARDY Pin Enable"]
 pub type ARDYPEN_R = crate::BitReader<bool>;
 #[doc = "Field `ARDYPEN` writer - EBI_ARDY Pin Enable"]
-pub type ARDYPEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 6>;
+pub type ARDYPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - EBI Pin Enable"]
     #[inline(always)]
@@ -102,37 +102,44 @@ impl R {
 impl W {
     #[doc = "Bit 0 - EBI Pin Enable"]
     #[inline(always)]
-    pub fn ebipen(&mut self) -> EBIPEN_W {
+    #[must_use]
+    pub fn ebipen(&mut self) -> EBIPEN_W<0> {
         EBIPEN_W::new(self)
     }
     #[doc = "Bit 1 - EBI_CS0 Pin Enable"]
     #[inline(always)]
-    pub fn cs0pen(&mut self) -> CS0PEN_W {
+    #[must_use]
+    pub fn cs0pen(&mut self) -> CS0PEN_W<1> {
         CS0PEN_W::new(self)
     }
     #[doc = "Bit 2 - EBI_CS1 Pin Enable"]
     #[inline(always)]
-    pub fn cs1pen(&mut self) -> CS1PEN_W {
+    #[must_use]
+    pub fn cs1pen(&mut self) -> CS1PEN_W<2> {
         CS1PEN_W::new(self)
     }
     #[doc = "Bit 3 - EBI_CS2 Pin Enable"]
     #[inline(always)]
-    pub fn cs2pen(&mut self) -> CS2PEN_W {
+    #[must_use]
+    pub fn cs2pen(&mut self) -> CS2PEN_W<3> {
         CS2PEN_W::new(self)
     }
     #[doc = "Bit 4 - EBI_CS3 Pin Enable"]
     #[inline(always)]
-    pub fn cs3pen(&mut self) -> CS3PEN_W {
+    #[must_use]
+    pub fn cs3pen(&mut self) -> CS3PEN_W<4> {
         CS3PEN_W::new(self)
     }
     #[doc = "Bit 5 - EBI_ALE Pin Enable"]
     #[inline(always)]
-    pub fn alepen(&mut self) -> ALEPEN_W {
+    #[must_use]
+    pub fn alepen(&mut self) -> ALEPEN_W<5> {
         ALEPEN_W::new(self)
     }
     #[doc = "Bit 6 - EBI_ARDY Pin Enable"]
     #[inline(always)]
-    pub fn ardypen(&mut self) -> ARDYPEN_W {
+    #[must_use]
+    pub fn ardypen(&mut self) -> ARDYPEN_W<6> {
         ARDYPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -154,11 +161,10 @@ impl crate::Readable for ROUTE_SPEC {
 #[doc = "`write(|w| ..)` method takes [route::W](W) writer structure"]
 impl crate::Writable for ROUTE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTE to value 0"]
 impl crate::Resettable for ROUTE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
