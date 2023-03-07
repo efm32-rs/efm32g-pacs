@@ -2,7 +2,7 @@
 name = "efm32g-pac"
 description = "Peripheral access API for EFM32G MCU (generated using svd2rust)"
 homepage = "https://github.com/efm32-rs/efm32g-pacs"
-version = "0.1.3"
+version = "0.1.4"
 authors = [ "Vladimir Petrigo <vladimir.petrigo@gmail.com>",]
 license = "BSD-3-Clause"
 keywords = [ "no-std", "arm", "cortex-m", "efm32",]
@@ -18,6 +18,7 @@ vcell = "~0.1"
 [features]
 default = [ "rt",]
 rt = [ "cortex-m-rt/device",]
+critical-section = [ "dep:critical-section",]
 efm32g200 = []
 efm32g210 = []
 efm32g222 = []
